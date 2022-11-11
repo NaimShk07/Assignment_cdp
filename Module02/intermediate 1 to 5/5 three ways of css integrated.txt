@@ -1,0 +1,3 @@
+Inline css
+External css
+Internal css

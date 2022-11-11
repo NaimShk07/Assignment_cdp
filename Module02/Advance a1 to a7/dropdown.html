@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/9c83c1b2f0.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    body {
+        color: black;
+        font-family: sans-serif;
+    }
+
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    .main {
+        background-color: #d54f4f;
+        font-family: sans-serif;
+
+        height: 50px;
+
+    }
+
+    .mlist {
+        display: inline-flex;
+        list-style: none;
+        height: 20px;
+        margin-left: 20px;
+        float: left;
+
+
+    }
+
+    .mlist2 {
+        float: right;
+        list-style: none;
+        height: 20px;
+        margin-right: 15px;
+    }
+
+    .mlist li {
+
+        padding: 0px 10px;
+        /* border: 1px solid black; */
+        height: 50px;
+        line-height: 50px;
+
+
+    }
+
+    .mlist2 li {
+
+        padding: 0px 10px;
+        height: 50px;
+        line-height: 50px;
+
+
+
+    }
+
+    .mlist li a {
+        color: white;
+        font-weight: 500;
+        text-decoration: none;
+
+    }
+
+    .mlist2 li a {
+        color: white;
+        font-weight: 500;
+        text-decoration: none;
+
+    }
+
+    .main .mlist i {
+        margin-left: 5px;
+    }
+
+    .mlist2 i {
+        margin-left: 5px;
+    }
+
+    .slist li {
+        list-style: none;
+        padding: 10px;
+
+    }
+
+    .sub {
+        display: none;
+    }
+
+    .main .mlist li:hover .sub {
+        display: block;
+        position: absolute;
+        margin-top: 2px;
+        background-color: #d54f4f;
+        border-radius: 4px;
+        margin-left: -12px;
+        width: 150px;
+        box-shadow: 3px 3px 10px;
+
+
+    }
+
+    .main .mlist li:hover .sub .slist {
+        margin: 5px 0px;
+        display: block;
+
+    }
+
+    .main .mlist li:hover .sub .slist li {
+        margin-top: -15px;
+        padding-left: 20px;
+
+        height: 60px;
+
+
+
+
+    }
+
+    .thirdmain {
+        background-color: #d54f4f;
+        color: black;
+        display: none;
+    }
+
+    .fourmain {
+        background-color: #d54f4f;
+        color: black;
+        display: none;
+    }
+
+    .sub .slist li:hover .thirdmain,
+    .thirdmain .thirdul li:hover .fourmain {
+        display: block;
+        position: absolute;
+        margin-left: 135px;
+        margin-top: -40px;
+        width: 150px;
+        border-radius: 4px;
+        box-shadow: 3px 3px 10px;
+
+    }
+
+    .sub .slist li:hover .thirdmain .thirdul,
+    .thirdmain .thirdul li:hover .fourmain .fourul {
+        margin: 5px 0px;
+        display: block;
+
+    }
+
+    .sub .slist li:hover .thirdmain .thirdul li,
+    .thirdmain .thirdul li:hover .fourmain .fourul li {
+        margin-top: -15px;
+        padding-left: 20px;
+
+        height: 60px;
+
+
+    }
+
+    .slist i,
+    .thirdul i {
+        color: white;
+        padding-left: 35px;
+
+    }
+    .last{
+        margin: 30px;
+        
+    }
+</style>
+
+<body>
+    <div class="main">
+        <ul class="mlist">
+            <li><a href="">Home</a></li>
+            <li>
+                <a href="">Profile</a>
+
+            </li>
+            <li><a href="">Message
+                    <i class="fa fa-caret-down"></i></a>
+
+            </li>
+            <li>
+                <a href="">Courses<i class="fa fa-caret-down"></i></a>
+                <div class="sub">
+                    <ul class="slist">
+                        <li><a href="">.NET</a></li>
+                        <li><a href="">Java</a></li>
+                        <li><a href="">MSOffice</a><i class="fa fa-caret-right"></i>
+                            <div class="thirdmain">
+                                <ul class="thirdul">
+                                    <li><a href="">Word</a></li>
+                                    <li><a href="">Excel</a><i class="fa fa-caret-right"></i>
+                                        <div class="fourmain">
+                                            <ul class="fourul">
+                                                <li><a href="">Basic</a></li>
+                                                <li><a href="">Advance</a></li>
+
+
+
+                                            </ul>
+
+
+                                        </div>
+                                    </li>
+                                    <li><a href="">Power Point</a></li>
+                                    <li><a href="">Access</a></li>
+
+
+                                </ul>
+
+
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+
+        </ul>
+        <ul class="mlist2">
+            <li><a href="">Admin<i class="fa fa-caret-down"></i></a></li>
+        </ul>
+
+
+
+    </div>
+    <div class="last">
+        <h3>Tutorial at home</h3>
+        <br>
+        Free Tutorial for all </div>
+
+</body>
+
+</html>

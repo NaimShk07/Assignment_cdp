@@ -1,0 +1,1 @@
+The class selector is a way to select all of the elements with the specified class name, and apply styles to each of the matching elements.
