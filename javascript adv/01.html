@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				box-sizing: border-box;
+				font-family: "Poppins", sans-serif;
+			}
+
+			body,
+			html {
+				height: 100%;
+				width: 100%;
+			}
+
+			.container {
+				height: 100vh;
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			table {
+				/* background-color: yellow; */
+			}
+
+			table th {
+				padding: 20px;
+			}
+			table td {
+				padding: 10px 20px;
+			}
+			button {
+				background-color: red;
+				color: white;
+				padding: 5px 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<table border="1">
+				<tr>
+					<th>Product Info</th>
+					<th>Quantity</th>
+					<th>Price (per unit)</th>
+					<th>Price (subtotal)</th>
+					<th></th>
+				</tr>
+				<tr>
+					<td>
+						<img
+							src="https://img.freepik.com/free-photo/double-hamburger-isolated-white-background-fresh-burger-fast-food-with-beef-cream-cheese_90220-1192.jpg?w=2000"
+							alt=""
+							height="60px"
+							width="60px"
+						/>
+					</td>
+					<td>
+						<input
+							style="padding: 5px 10px"
+							type="text"
+							name=""
+							id="burger"
+							onkeyup="burgerhandler()"
+						/>
+					</td>
+					<td>Rs <span>100</span></td>
+					<td>Rs <span id="burger-total">0</span></td>
+					<td><button id="burger-btn">Remove</button></td>
+				</tr>
+				<tr>
+					<td>
+						<img
+							src="https://img.freepik.com/free-photo/thinly-sliced-pepperoni-is-popular-pizza-topping-american-style-pizzerias-isolated-white-background-still-life_639032-229.jpg?w=2000"
+							alt=""
+							height="60px"
+							width="60px"
+						/>
+					</td>
+					<td>
+						<input
+							style="padding: 5px 10px"
+							type="text"
+							name=""
+							id="pizza"
+							onkeyup="pizzahandler()"
+						/>
+					</td>
+					<td>Rs <span>300</span></td>
+					<td>Rs <span id="pizza-total">0</span></td>
+					<td><button id="pizza-btn">Remove</button></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>Rs <span id="main-total">0</span></td>
+					<td></td>
+				</tr>
+			</table>
+		</div>
+
+		<script>
+			let inputBurger = document.querySelector("#burger");
+			let inputPizza = document.querySelector("#pizza");
+
+			let burgertotal = document.querySelector("#burger-total");
+			let pizzatotal = document.querySelector("#pizza-total");
+
+			let mainTotal = document.querySelector("#main-total");
+
+			let pizzaBtn = document.querySelector("#pizza-btn");
+			let burgerBtn = document.querySelector("#burger-btn");
+
+			function burgerhandler(e) {
+				if (isNaN(inputBurger.value)) {
+					inputBurger.value = 0;
+				}
+				burgertotal.innerText = inputBurger.value * 100;
+				mainTotal.innerText = +burgertotal.innerText + +pizzatotal.innerText;
+			}
+			function pizzahandler() {
+				if (isNaN(inputPizza.value)) {
+					inputPizza.value = 0;
+				}
+				pizzatotal.innerText = inputPizza.value * 300;
+				mainTotal.innerText = +burgertotal.innerText + +pizzatotal.innerText;
+			}
+
+			burgerBtn.addEventListener("click", () => {
+				inputBurger.value = 0;
+				burgerhandler();
+			});
+			pizzaBtn.addEventListener("click", () => {
+				inputPizza.value = 0;
+				pizzahandler();
+			});
+		</script>
+	</body>
+</html>
